@@ -1,0 +1,375 @@
+/* --- Core Gaming Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0c0813;
+    overflow-x: hidden;
+    padding: 20px 15px;
+}
+
+/* --- High-Glow Mobile Header Title --- */
+.birthday-banner-header {
+    margin: 15px 0;
+    z-index: 10;
+    text-align: center;
+}
+
+.birthday-banner-header h1 {
+    font-family: 'DynaPuff', cursive;
+    font-size: 1.6rem; /* Adjusted slightly for perfect single-line fitting on small phone screens */
+    color: #ff3377;
+    text-shadow: 
+        0 0 10px #ff3377,
+        0 0 25px rgba(255, 51, 119, 0.6),
+        0 4px 0px #ffb3c6;
+    letter-spacing: 0.5px;
+    animation: floating 3s infinite ease-in-out;
+}
+
+/* --- Vivid Neon Pink Matrix Ambient Background --- */
+.neon-pink-glow-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 40%, #2e081c 0%, #0d040a 100%);
+    z-index: -3;
+}
+
+.sparkle-grid {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(rgba(255, 51, 119, 0.08) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.05) 1px, transparent 1px);
+    background-size: 45px 45px;
+    z-index: -2;
+    animation: gridScroll 14s infinite linear;
+}
+
+/* --- Kinetic Floating Balloon Entities --- */
+.balloon {
+    position: absolute;
+    font-size: 2.8rem;
+    filter: drop-shadow(0 0 15px rgba(255, 51, 119, 0.5));
+    z-index: -1;
+    animation: floatUp 6s infinite ease-in-out alternate;
+}
+.b1 { left: 4%; top: 12%; }
+.b2 { right: 4%; top: 18%; animation-delay: -2s; }
+
+/* --- Falling Particle Streams --- */
+.confetti {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    z-index: 1;
+    animation: fall 5s infinite linear;
+}
+.c1 { background: #ff3377; left: 10%; animation-duration: 4s; box-shadow: 0 0 8px #ff3377; }
+.c2 { background: #00f2fe; left: 40%; animation-duration: 5.5s; box-shadow: 0 0 8px #00f2fe; }
+.c3 { background: #ff70a6; left: 70%; animation-duration: 4.8s; box-shadow: 0 0 8px #ff70a6; }
+.c4 { background: #ffb3c6; left: 88%; animation-duration: 3.8s; }
+
+/* --- High-Intensity Pulsing Action Banner --- */
+.press-start-btn {
+    font-family: 'DynaPuff', cursive;
+    font-size: 0.95rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff3377, #ff6699);
+    padding: 14px 40px;
+    border-radius: 30px;
+    box-shadow: 
+        0 0 15px #ff3377,
+        0 0 30px rgba(255, 51, 119, 0.4);
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    z-index: 10;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    animation: pulse 1.4s infinite alternate ease-in-out;
+}
+
+/* --- VERTICAL SMART-STACK RESPONSIVE MOBILE HARDWARE --- */
+.switch-console-mobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    gap: 0px;
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+/* --- Ultra-Glow Mini Joy-Cons Frame Design --- */
+.joycon {
+    position: relative;
+    width: 100%;
+    height: 65px;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    z-index: 5;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1), opacity 0.4s ease;
+}
+
+.left-joycon {
+    background: linear-gradient(180deg, #ff3377, #ff5588);
+    border-radius: 20px 20px 0 0;
+    border-top: 2px solid #ff99bb;
+    box-shadow: 0 -5px 20px rgba(255, 51, 119, 0.3);
+}
+
+.right-joycon {
+    background: linear-gradient(180deg, #ff77aa, #ff99bb);
+    border-radius: 0 0 20px 20px;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(255, 119, 170, 0.2);
+}
+
+/* --- High-Accuracy Inset Interface Elements --- */
+.joystick-casing {
+    width: 38px;
+    height: 38px;
+    background: #191b22;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.5);
+}
+
+.joystick-thumb {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 35% 35%, #524b4d 0%, #262122 80%);
+    border-radius: 50%;
+    border: 2px solid #1a1617;
+}
+
+.d-pad, .abxy-cluster {
+    position: relative;
+    width: 42px;
+    height: 42px;
+}
+
+.arrow, .button-node {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background: #ffffff;
+    border-radius: 50%;
+    color: #ff3377;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.up { top: 0; left: 14px; }
+.down { bottom: 0; left: 14px; }
+.left { left: 0; top: 14px; }
+.right { right: 0; top: 14px; }
+
+.X { top: 0; left: 14px; }
+.B { bottom: 0; left: 14px; }
+.Y { left: 0; top: 14px; }
+.A { right: 0; top: 14px; }
+
+.capture-btn { width: 12px; height: 12px; background: #ffffff; border-radius: 2px; }
+.home-btn { width: 16px; height: 16px; background: #ffffff; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+.home-ring { width: 10px; height: 10px; border: 2px solid #ff3377; border-radius: 50%; }
+
+/* --- High-Gloss Central Monitor Overlay Screen --- */
+.console-screen {
+    width: 100%;
+    height: 240px;
+    background: #090a0f;
+    border-left: 6px solid #1f222e;
+    border-right: 6px solid #1f222e;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.9);
+}
+
+.screen-glare {
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: linear-gradient(45deg, transparent 46%, rgba(255,255,255,0.03) 50%, transparent 54%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.logo-badge {
+    font-family: 'DynaPuff', cursive;
+    font-size: 0.75rem;
+    color: #ff6699;
+    letter-spacing: 2px;
+    opacity: 0.35;
+    text-shadow: 0 0 8px #ff3377;
+}
+
+.neon-indicator-dot {
+    position: absolute; bottom: 10px; right: 15px; width: 6px; height: 6px;
+    background: #00f2fe;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00f2fe;
+}
+
+/* --- Mobile Slider-Overlay Birthday Letter Engine --- */
+.game-cartridge-letter {
+    position: absolute;
+    top: 100%;
+    left: 4%;
+    width: 92%;
+    height: 92%;
+    background: #ffffff;
+    border: 3px solid #ff3377;
+    border-radius: 12px;
+    padding: 22px 18px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 25px rgba(255, 51, 119, 0.25);
+    z-index: 12;
+}
+
+.ui-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px dashed #ffccd5;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.system-tag { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 0.7rem; color: #ff3377; letter-spacing: 0.5px; }
+.battery-status { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #00f2fe; font-weight: 800; text-shadow: 0 0 2px rgba(0, 242, 254, 0.2); }
+
+.game-cartridge-letter h2 {
+    font-family: 'DynaPuff', cursive;
+    font-size: 1.25rem;
+    color: #ff3377;
+    text-align: center;
+    margin-bottom: 16px;
+    text-shadow: 0 0 2px rgba(255, 51, 119, 0.1);
+}
+
+.game-cartridge-letter p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #4f4245;
+    margin-bottom: 14px;
+    text-align: justify;
+}
+
+.game-cartridge-letter .closing {
+    font-family: 'DynaPuff', cursive;
+    font-size: 0.88rem;
+    color: #ff3377;
+    text-align: right;
+    margin-top: 25px;
+    border-top: 2px dashed #ffccd5;
+    padding-top: 15px;
+}
+
+/* --- SYSTEM BOOT CODE ENGINE --- */
+#system-power {
+    display: none;
+}
+
+#system-power:checked ~ .switch-console-mobile .left-joycon {
+    transform: translateY(-25px);
+    opacity: 0.2;
+}
+
+#system-power:checked ~ .switch-console-mobile .right-joycon {
+    transform: translateY(25px);
+    opacity: 0.2;
+}
+
+#system-power:checked ~ .switch-console-mobile .console-screen {
+    height: 480px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 4px solid #ff3377;
+    box-shadow: 
+        0 0 25px #ff3377,
+        0 15px 40px rgba(0,0,0,0.5);
+}
+
+#system-power:checked ~ .switch-console-mobile .game-cartridge-letter {
+    top: 4%;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+}
+
+#system-power:checked ~ .press-start-btn {
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* --- Mobile Clean UI Custom Scrollbars --- */
+.game-cartridge-letter::-webkit-scrollbar {
+    width: 4px;
+}
+.game-cartridge-letter::-webkit-scrollbar-thumb {
+    background: #ffb3c6;
+    border-radius: 10px;
+}
+
+/* --- Core Keyframe Engines --- */
+@keyframes gridScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 45px 45px; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 15px #ff3377, 0 0 5px rgba(255, 51, 119, 0.3); }
+    100% { transform: scale(1.04); box-shadow: 0 0 25px #ff3377, 0 0 15px #00f2fe; }
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(-2deg); }
+    100% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes fall {
+    0% { top: -20px; transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(15px) rotate(180deg); }
+    100% { top: 100vh; transform: translateX(-15px) rotate(360deg); }
+}
+    
